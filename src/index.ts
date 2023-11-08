@@ -3,6 +3,7 @@ export { Scene } from "./core/Scene";
 export { Loader } from "./loaders/Loader";
 export { PLYLoader } from "./loaders/PLYLoader";
 export { WebGLRenderer } from "./renderers/WebGLRenderer";
+export { DualCameraControls } from "./controls/DualCameraControls";
 export { OrbitControls } from "./controls/OrbitControls";
 export { Quaternion } from "./math/Quaternion";
 export { Vector3 } from "./math/Vector3";

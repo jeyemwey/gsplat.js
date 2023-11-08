@@ -9,10 +9,18 @@ class Vector3 {
         this.z = z;
     }
 
-    set(x: number, y: number, z: number): Vector3 {
-        this.x = x;
-        this.y = y;
-        this.z = z;
+    set(x: Vector3): Vector3;
+    set(x: number, y: number, z: number): Vector3;
+    set(x: Vector3 | number, y: number, z: number): Vector3 {
+        if (typeof x === "number") {
+            this.x = x;
+            this.y = y;
+            this.z = z;
+        } else {
+            this.x = x.x;
+            this.y = x.y;
+            this.z = x.z;
+        }
 
         return this;
     }

@@ -16,12 +16,20 @@ class Quaternion {
         this.normalize();
     }
 
-    set(x: number, y: number, z: number, w: number): Quaternion {
-        this.x = x;
-        this.y = y;
-        this.z = z;
-        this.w = w;
-
+    set(x: Quaternion): Quaternion;
+    set(x: number, y: number, z: number, w: number): Quaternion;
+    set(x: Quaternion | number, y: number, z: number, w: number): Quaternion {
+        if (typeof x === "number") {
+            this.x = x;
+            this.y = y;
+            this.z = z;
+            this.w = w;
+        } else {
+            this.x = x.x;
+            this.y = x.y;
+            this.z = x.z;
+            this.w = x.w;
+        }
         this.normalize();
 
         return this;
