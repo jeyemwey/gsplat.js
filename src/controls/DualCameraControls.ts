@@ -3,8 +3,9 @@ import { Vector3 } from "../math/Vector3";
 import { Camera } from "../cameras/Camera";
 
 class DualCameraControls {
-    private update: () => void;
     private primaryControls: OrbitControls;
+
+    update: () => void;
 
     constructor(cameraPrimary: Camera, canvasPrimary: HTMLCanvasElement, cameraSecondary: Camera, vr_offset: Vector3) {
         this.primaryControls = new OrbitControls(cameraPrimary, canvasPrimary);
